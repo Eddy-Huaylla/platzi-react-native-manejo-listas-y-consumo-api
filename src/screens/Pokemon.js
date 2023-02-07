@@ -4,6 +4,7 @@ import { ScrollView } from "react-native";
 import { getPokemonDetailsApi } from "../services/pokemon";
 
 import { Header } from "../components/Pokemon/Header";
+import { Type } from "../components/Pokemon/Type";
 
 export const Pokemon = ( props ) => {
 	const {
@@ -34,6 +35,7 @@ export const Pokemon = ( props ) => {
 				image={ pokemon.sprites.other["official-artwork"].front_default }
 				type={ pokemon.types[0].type.name }
 			/>
+			<Type types={ pokemon.types } />
 		</ScrollView>
 	);
 }
