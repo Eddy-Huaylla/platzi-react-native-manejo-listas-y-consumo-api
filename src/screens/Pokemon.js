@@ -5,6 +5,7 @@ import { getPokemonDetailsApi } from "../services/pokemon";
 
 import { Header } from "../components/Pokemon/Header";
 import { Type } from "../components/Pokemon/Type";
+import { Stats } from "../components/Pokemon/Stats";
 
 export const Pokemon = ( props ) => {
 	const {
@@ -36,6 +37,7 @@ export const Pokemon = ( props ) => {
 				type={ pokemon.types[0].type.name }
 			/>
 			<Type types={ pokemon.types } />
+			<Stats stats={ pokemon.stats } />
 		</ScrollView>
 	);
 }
