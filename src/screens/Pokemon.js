@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "react-native";
+
 import { getPokemonDetailsApi } from "../services/pokemon";
+
+import { Header } from "../components/Pokemon/Header";
 
 export const Pokemon = ( props ) => {
 	const {
@@ -25,9 +27,13 @@ export const Pokemon = ( props ) => {
 	if ( !pokemon ) return null;
 
 	return (
-		<SafeAreaView>
-			<Text>Estamos en un POKEMON</Text>
-			<Text>{ pokemon.name }</Text>
-		</SafeAreaView>
+		<ScrollView>
+			<Header
+				name={ pokemon.name }
+				order={ pokemon.order }
+				image={ pokemon.sprites.other["official-artwork"].front_default }
+				type={ pokemon.types[0].type.name }
+			/>
+		</ScrollView>
 	);
 }
